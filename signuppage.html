@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sign Up</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      background-image: url('books_library_shelves_138556_1920x1080.jpg');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .container
+    {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    .divForm
+    {
+      margin-top: 100px;
+      background-color: #fefff95e;
+      padding: 50px;
+    }
+    h1,input,button{
+      text-align: center;
+      padding: 10px;
+      line-height: 20px;
+    }
+    h1
+    {
+      margin: 10px auto 20px auto;
+      font-size: 50px;
+      width: 100%;
+      background-color: #f9b07cf0;
+      padding: 25px;
+      box-sizing: border-box;
+      border: 1px solid black;
+      border-radius: 10px;
+      color: black;
+    }
+    input
+    {
+      display: block;
+      width: 100%;
+      /* margin: 8px auto;
+      height: 30px;
+      padding: 7px;
+      font-size: 16px;
+      color: black; */
+
+      margin: 8px auto;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      border-radius: 10px;
+      border: 1px solid black;
+      font-size: 18px;
+      color: black;
+      box-sizing: border-box;
+    }
+    #signupBtn
+    {
+      width: 50%;
+      background-color: #f9ad76e6;
+      display: inline-block;
+      height: 50px;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 10px;
+      margin: 0 25%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="divForm">
+      <h1>Sign Up</h1>
+      <form action="">
+        <input type="text" name="name" placeholder="Enter your Name" id="inpName" required>
+        <input type="email" name="email" id="inpEmail" placeholder="Enter your Email Address" required>
+        <input type="password" name="password" id="inpPass" placeholder="Enter your Password" required>
+        <input type="password" name="cpassword" id="inpCPass" placeholder="Enter your Password again" required>
+        <input type="tel" name="mobile" id="inpMobile" placeholder="Enter your Mobile No." required>
+        <input type="submit" id="signupBtn" value="Sign Up">
+
+      </form>
+    </div>
+  </div>
+
+  <script>
+    var signupBtn = document.getElementById('signupBtn');
+    signupBtn.addEventListener('click',validate);
+    function validate(e)
+    {
+      e.preventDefault();
+      var email = document.getElementById('inpEmail').value;
+      var pass = document.getElementById('inpPass').value;
+      var cpass = document.getElementById('inpCPass').value;
+      var mobile = document.getElementById('inpMobile').value;
+      if(email==""||pass==""||cpass==""||mobile=="")
+      alert('One or more field may be empty');
+      else if(email.indexOf('@')<5||email.indexOf('.')-email.indexOf('@')<4)
+      alert('Invalid Email');
+      else if(pass!=cpass)
+      alert("Password Doesn't Match");
+      else if(mobile.length!=10)
+      alert("Invalid Mobile No.");
+    }
+  </script>
+</body>
+</html>
