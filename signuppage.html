@@ -102,7 +102,7 @@
       var mobile = document.getElementById('inpMobile').value;
       if(email==""||pass==""||cpass==""||mobile=="")
       alert('One or more field may be empty');
-      else if(email.indexOf('@')<5||email.indexOf('.')-email.indexOf('@')<4)
+      else if(email.indexOf('@')<5||email.lastIndexOf('.')-email.indexOf('@')<4)
       alert('Invalid Email');
       else if(pass!=cpass)
       alert("Password Doesn't Match");
